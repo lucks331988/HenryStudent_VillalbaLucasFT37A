@@ -1,8 +1,15 @@
 'use strict';
 
 function BinarioADecimal(num) {
-    // Convertir la cadena binaria a decimal
-    let numeroDecimal = parseInt(num, 2);
+    let longitud = num.length;
+    let numeroDecimal = 0;
+
+    for (let i = 0; i < longitud; i++) {
+        let digito = num.charAt(longitud - 1 - i);
+        if (digito == '1') {
+            numeroDecimal += Math.pow(2, i);
+        }
+    }
 
     return numeroDecimal;
 }
